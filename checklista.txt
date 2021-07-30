@@ -1,0 +1,30 @@
+Witryna na wybrany temat zawierająca stronę napisaną w HTML 5 wraz z wykonaną stylizacją CSS wszystkich elementów i własną grafiką. <<< GOTOWE
+
+Zawartość  HTML:
+1.       Strona główna +  min. 4 podstrony << GOTOWE
+2.       Kodowanie, opis strony, słowa kluczowe wskazujące na treść witryny, tytuł strony. <<< GOTOWE
+3.       Struktura strony wykorzystująca znaczniki strukturalne HTML5. <<< GOTOWE
+4.       W stopce dane autora strony <<< GOTOWE
+5.      Menu nawigacyjne między stronami własnymi <<< GOTOWE
+6.       3 linki do polecanych stron zewnętrznych <<< GOTOWE
+7.       Min. 4 obrazki, w tym: <<< GOTOWE
+
+ Logo- własny projekt wykonany w programie Inkscape <<< GOTOWE
+Jeden z obrazów wykorzystanych na stronie przygotowany samodzielnie z komponentów znalezionych lub własnych- wykonany w programie Gimp <<< GOTOWE
+ jeden obraz stanowiący link, przekierowujący na zewnętrzną tematykę <<< GOTOWE
+przekierowanie do góry strony w postaci graficznej <<< GOTOWE
+
+8.       Podstrona zawierająca formularz dla użytkownika, np. Formularz kontaktowy lub na temat : „co Cię najbardziej zainteresowało na mojej stronie?”  lub inne, minimum 6 różnych elementów formularza. <<< GOTOWE
+9.       Lista zagnieżdżona zawierająca listę numerowaną i wypunktowaną <<< GOTOWE
+10.   Tabelka z połączeniami komórek <<< GOTOWE
+11.   Podane źródła pochodzenia materiałów w postaci linków przekierowujących na konkretne strony ( nie może być źródłem: google) <<< GOTOWE
+Kryteria CSS:
+1.       Zewnętrzny plik stylów <<< GOTOWE
+2.       układ strony oparty o flexboxa <<< GOTOWE
+3.       stylizacja wszystkich elementów HTML <<< GOTOWE
+4.       * animacje, ciekawe rozwiązania, atrakcyjny layout <<< GOTOWE
+
+Kryteria grafika:
+
+1.       Logo- własny projekt wykonany w programie Inkscape <<< GOTOWE
+2.       Jeden z obrazów wykorzystanych na stronie przygotowany samodzielnie z komponentów znalezionych lub własnych- wykonany w programie Gimp <<< GOTOWE

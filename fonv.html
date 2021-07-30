@@ -1,0 +1,150 @@
+<!-- Wykonał: Dariusz Kierojczyk, 3 TiD -->
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+	<meta charset="utf-8">
+	<title>Fallout New Vegas</title>
+	<meta name="author" content="Dariusz Kierojczyk">
+	<meta name="description" content="Strona poświęcona odsłonom gier z postapokaliptycznej serii Fallout osadzonym w uniwersum 3D, wykonana na potrzeby projektu szkolnego.">
+	<meta name="keywords" content="Fallout, Fallout 4, Fallout 3, Fallout 76, Fallout New Vegas, Bethesda, Bethesda Softworks, Fallout 3D, Seria Fallout, FO, FO3D, FO3, FO4, FONV, FO76, Bethesda SW, Obsidian Entertainment, Obsidian, OE, Fallout Multiplayer, Fallout Singleplayer, Sandbox, RPG, Open World, Exploration, Postapo, Postapo, Fantastyka postapokaliptyczna, post apocalyptic, post-apocalyptic">
+	<!-- Pierwszy arkusz styli CSS - zawiera 99% ustawień wyglądu strony -->
+	<link rel="stylesheet" type="text/css" href="styl.css">
+	<!-- Drugi arkusz styli CSS - zawiera pozostały 1% - wszystkie konstrukcje zastosowanych animacji -->
+	<link rel="stylesheet" type="text/css" href="animacje.css">
+	<!-- Czcionka najbardziej zbliżona do tej z gier -->
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<!-- Małe logo przekonwertowane na ikonę strony - favicon -->
+	<link rel="shortcut icon" href="grafiki/favicon.ico">
+</head>
+
+<body>
+	<div id="container">
+		<nav id="panelboczny">
+			<a href="#container">Fabuła</a>
+			<a href="#mapa">Mapa<br>świata</a>
+			<a href="#recenzja">Napisz<br>recenzję</a>
+		</nav>	
+		<div id="sticky">
+			<header>
+				<a href="index.html">
+					<!-- Małe logo zostało wykonane od zera w Inkscape, inspiracją było logo Fallout 76 -->
+					<img src="grafiki/logo.png" alt="Małe logo Fallout">
+				</a>
+				<a href="index.html">
+					<!-- Logo zostało wycięte z tapety tematycznej dostępnej w Internecie -->
+					<img src="grafiki/logoDuze.png" alt="Logo Fallout">
+				</a>
+			</header>
+			<nav id="gry">
+				<a href="fo76.html">Fallout 76</a>
+				<a href="fo4.html">Fallout 4</a>
+				<a href="fonv.html" class="lokalizacja">Fallout New Vegas</a>
+				<a href="fo3.html">Fallout 3</a>
+			</nav>
+			<nav id="tworcy">
+				<!-- Trzy polecane strony zewnętrzne -->
+				<a href="https://bethesda.net/pl/dashboard">[ Bethesda.net ]</a>
+				<a href="https://www.youtube.com/user/BethesdaSoftworks">[ YouTube ]</a>
+				<a href="https://www.facebook.com/BethesdaSoftworks/">[ Facebook ]</a>
+			</nav>
+		</div>
+		<main>
+			<section class="polramka" id="fabula">
+				<div id="cover">
+					<img src="grafiki/falloutnv-cover.png" alt="Okładka Fallout New Vegas">
+				</div>
+				<div id="tresc">
+					<h2 class="type">Fabuła gry Fallout New Vegas</h2>
+					<p>
+						Gracz sprawuje kontrolę nad kurierem pracującym dla Mojave Express, nazywanym po prostu Kurierem. W trakcie podróży celem dostarczenia przesyłki zawierającej przedmiot nazywany Platynowym Sztonem Kurier wpada w zasadzkę przygotowaną przez Benny’ego – gangstera i właściciela kasyna Tops, który kradnie przesyłkę i zostawia Kuriera na pewną śmierć po strzeleniu mu w głowę. Będący świadkiem wydarzenia robot Victor zanosi Kuriera do doktora Mitchella w Goodsprings. Mimo szoku pourazowego, po dojściu do siebie Kurier wyrusza na pustkowia celem odnalezienia Benny’ego i odzyskania skradzionej przesyłki. Podczas swojej podróży, Kurier zostaje wplątany w konflikt pomiędzy Legionem Cezara, Republiką Nowej Kalifornii i Panem House’em. Każda z frakcji chce zająć wciąż sprawną Zaporę Hoovera, zaopatrującą okolicę w energię i czystą, nienapromieniowaną wodę – zdobycie Zapory równoznaczne jest z przejęciem kontroli nad Nowym Vegas i Pustkowiami Mojave.
+					</p>
+				</div>
+			</section>
+			<section class="polramka" id="mapa">
+				<h2 class="type">Mapa świata - Fallout New Vegas</h2>
+				<!-- Chciałem użyć Gimpa aby przerobić mapę na zieloną kolorystykę (tak jak 2 inne mapy), jednak mapa straciłaby wówczas na czytelności -->
+				<img id="map" src="grafiki/fonvmap.jpg" alt="Mapa świata Fallout New Vegas">
+			</section>
+			<section id="recenzja">
+				<form>
+					<fieldset>
+						<legend>Napisz recenzję dla Fallout New Vegas</legend>
+						<p>
+							<label for="username">*Nazwa użytkownika: </label><input type="text" id="username" required autocomplete="off">
+						</p>
+						<p>
+							<label for="email">*Email: </label><input id="email" type="email" required autocomplete="off">
+						</p>
+						<p>
+							<label for="czasgry">Czas spędzony w grze: </label><input id="czasgry" type="number" min="1" autocomplete="off"> [godz.]
+						</p>
+						<p>
+							Ogólne wrażenia z gry:
+							<br>
+							<label class="radioicheck"><input type="radio" name="feedback">Bardzo pozytywne</label>
+							<label class="radioicheck"><input type="radio" name="feedback">Pozytywne</label>
+							<label class="radioicheck"><input type="radio" name="feedback">Mieszane</label>
+							<label class="radioicheck"><input type="radio" name="feedback">Negatywne</label>
+							<label class="radioicheck"><input type="radio" name="feedback">Bardzo negatywne</label>
+						</p>
+						<p>
+							Które elementy gry najbardziej przypadły Ci do gustu?
+							<br>
+							<div id="plusy">
+								<div>
+									<label class="radioicheck"><input type="checkbox">Fabuła</label>
+									<label class="radioicheck"><input type="checkbox">Zadania poboczne</label>
+									<label class="radioicheck"><input type="checkbox">Frakcje</label>
+									<label class="radioicheck"><input type="checkbox">Eksploracja</label>
+									<label class="radioicheck"><input type="checkbox">Otwarty świat</label>
+								</div>
+								<div>
+									<label class="radioicheck"><input type="checkbox">Tło historyczne</label>
+									<label class="radioicheck"><input type="checkbox">Mechaniki gry</label>
+									<label class="radioicheck"><input type="checkbox">Poziom trudności</label>
+									<label class="radioicheck"><input type="checkbox">Rozwój postaci</label>
+									<label class="radioicheck"><input type="checkbox">Dodatki [DLC]</label>
+								</div>
+								<div>		
+									<label class="radioicheck"><input type="checkbox">Grafika</label>
+									<label class="radioicheck"><input type="checkbox">Audio/muzyka</label>
+									<label class="radioicheck"><input type="checkbox">System rozwoju postaci</label>
+									<label class="radioicheck"><input type="checkbox">Modyfikacje społeczności</label>
+									<label class="radioicheck"><input type="checkbox">Inne</label>
+								</div>
+							</div>
+						</p>
+						<p>
+							<span id="taborder">Podziel się szczegółową opinią:</span>
+							<br>
+							<span id="tablink"></span>
+							<textarea></textarea>
+						</p>
+						<p>
+							*Czy polecasz tę grę?
+							<br>
+							<label class="radioicheck"><input type="radio" name="rec" required>Polecam</label>
+							<label class="radioicheck"><input type="radio" name="rec">Nie polecam</label>
+						</p>
+						<p>
+							<label for="ocena">*Oceń grę w skali od 1 do 10: </label><input id="ocena" type="number" min=1 max=10 step=0.5 required maxlength="2" autocomplete="off"><span id="gwiazdka">☆</span>
+						</p>
+						<p>
+							<input type="submit" value="[ Napisz recenzję ]">
+							<input type="reset" value="[ Wyczyść ]">
+						</p>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<footer>
+			<!-- Ukryta podstrona ze źródłami - znajdują się tam wszystkie wykorzystane przeze mnie linki oraz notatki, które sporządzałem sobie podczas pracy -->
+			<h2><a href="zrodla.html">>>> Dariusz Kierojczyk, 3 TiD</a></h2>
+		</footer>
+		<!-- Obrazek znaleziony w Internecie - usunąłem tło oraz przekształciłem go na "konturową" wersję >>> Przekierowanie do góry w postaci graficznej-->
+		<a href="#container"><img id="up" src="grafiki/Vault-boy.png" alt="Vault Boy - powrót na górę strony"></a>
+	</div>
+</body>
+
+</html>

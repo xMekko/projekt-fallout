@@ -1,0 +1,798 @@
+/*przy odświeżaniu stron poprzez F5 kursor nie zmienia się dopóki nie zostanie wykonana 
+/*elementy wspólne*/
+* 
+{
+	box-sizing: border-box; 
+	cursor: url("grafiki/Pointer.cur"), auto;
+}
+
+/*płynne przewijanie*/
+html
+{
+	scroll-behavior: smooth;
+}
+
+
+body
+{
+	background-color: #0d1b0f;
+	color: #199515;
+	font-family: 'Fira Code', monospace;
+	margin: 0;
+}
+
+#container
+{
+	width: 100%;
+/*pod względem wysokości strona zajmuje całe okno przeglądarki ale nie dodaje paska do przewijania tak jak przy 100vh*/
+	height: 97.5vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+/*efekt odświeżania ekranu*/
+body::before
+{
+	content: "";
+	width: 100%;
+	height: 20vh;
+	background-color:  rgba(14, 78, 11, 0.15);
+	box-shadow: 0px 0px 15px 15px rgba(14, 78, 11, 0.15);
+	position: fixed;
+	animation: crt 7s infinite;
+	animation-timing-function: ease-in-out;
+	z-index: 2;
+	pointer-events: none;
+}
+
+/*efekt pisania na klawiaturze*/
+.type
+{
+	overflow: hidden;
+	white-space: nowrap;
+	animation: keyboard steps(100, end);
+	animation-fill-mode: forwards;
+}
+
+/*dopasowanie nagłówków do czcionki*/
+h1, h2, h3, h4, h5, h6{font-weight: normal;}
+
+/*NAGŁÓWEK I NAWIGACJA
+efekt przyklejonego nagłówka i menu nawigacji*/
+#sticky
+{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+}
+header
+{
+	display: flex;
+	align-items: center;
+	height: 12.5vh;
+	width: 100%;
+}
+
+header a
+{
+	font-size: 0.5vh;
+	text-decoration: none;
+}
+
+header a:first-child
+{
+	margin: 0 1vw;
+}
+
+header img[alt="Logo Fallout"] 
+{
+	position: absolute; 
+	top: 0; 
+	left: 39.5vw; 
+	width: 20vw; 
+	height: 12vh; 
+	opacity: 0.8;
+}
+header img[alt="Małe logo Fallout"]
+{
+	width: 12vh; 
+	height: 12vh; 
+	opacity: 0.8;
+}
+header img[alt="Logo Fallout"]:hover, header img[alt="Małe logo Fallout"]:hover
+{
+	opacity: 1;
+}
+
+
+#gry
+{
+	width: 100%;
+	min-height: 6vh;
+	border-bottom: 0.5vh solid #146c11;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+#gry a
+{
+	font-weight: bold;
+	text-decoration: none;
+	color: #146c11;
+	text-transform: uppercase;
+	font-size: 3.5vh;
+	display: inline-block;
+}
+
+#gry a:hover
+{
+	color: #199515;
+}
+
+#gry a:active
+{
+	color: #3BB737;
+}
+
+
+#tworcy
+{
+	width: 55%;
+	min-height: 5vh;
+	border: 0.5vh solid #146c11;
+	border-top: 0;
+	border-radius: 0 0 2px 2px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;	
+	margin: 0 auto;
+}
+
+#tworcy a
+{
+	font-weight: bold;
+	text-decoration: none;
+	color: #146c11;
+	text-transform: uppercase;
+	font-size: 2.5vh;
+	display: inline-block;
+}
+
+#tworcy a:hover
+{
+	background-color: #199515;
+	color: #0d1b0f;
+}
+
+#tworcy a:active
+{
+	background-color: #146c11;
+	color: #0d1b0f;
+}
+
+header, #gry, #tworcy
+{
+	background-color: #0d1b0f;
+}
+
+/*przycisk powrotu do góry strony*/
+#up 
+{
+	width: 9vw; 
+	height: 18vh; 
+	position: fixed; 
+	bottom: 0; 
+	right: 0; 
+	opacity: 0.5;
+}
+#up:hover
+{
+	opacity:1;
+}
+
+/*stopka*/
+footer
+{
+	border-top: 0.5vh solid #146c11;
+	width: 89vw;
+	position: relative;
+	left: -5vw;
+}
+footer h2
+{
+	margin-left: 2vw;
+	font-size: 2vh;
+}
+
+
+/* pole main  */
+main
+{
+	padding-top: 5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*boczny pasek nawigacji*/
+
+#panelboczny
+{
+	position: fixed;
+	left: 0px;
+	top: 40%;
+	width: 1vw;
+	min-height: 15vh;
+	background-color: #145b11;
+	overflow: hidden;
+	border: 0.5vh solid #199515;
+	border-left: none;
+	border-radius: 0 3px 3px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	color: #3BB737;
+	transition: width 0.75s, color 0.25s;
+	z-index: 2;
+}
+
+#panelboczny a
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 50%;
+	font-size: 2.5vh;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: inherit;
+	visibility: hidden;
+	border-bottom: 0.1vh solid #199515;
+}
+/*linia oddzielająca elementy bocznej nawigacji*/
+#panelboczny a:last-child
+{
+	border-bottom: none;
+}
+/*rozwijany pasek nawigacji na boku strony*/
+#panelboczny:hover
+{
+	width: 12vw;
+}
+#panelboczny:hover a 
+{
+	visibility: visible;
+}
+#panelboczny a:hover
+{
+	background-color: #3BB737;
+	color: #145b11;
+}
+#panelboczny a:active
+{
+	background-color: #146c11;
+	color:  #0d1b0f;
+}
+
+#sekcja_okladki
+{
+	width: 75vw;
+}
+
+#sekcja_okladki h2, #sekcja_dlc h2, #sekcja_spolszczenia h2 
+{
+	animation-duration: 7s; 
+	margin-bottom: 1.5vh; 
+	margin-left: 5vw; 
+	font-size: 4vh;
+}
+
+
+#okladki
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.okladka
+{
+	width: 16vw;
+	height: 45vh;
+	margin: 2vh 15px;
+	border-radius: 0.5vw;
+	opacity: 0;
+	animation: pop 1.5s;
+	animation-delay: 1.75s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+	display: inline-block;
+	position: relative;
+}
+#okladki img
+{
+	opacity: 0.8;
+	width: 16vw;
+	height: 45vh;
+	border-radius: 0.5vw;
+	position: relative;
+}
+
+/*efekt przyciemnienia po najechaniu*/
+.okladka::before
+{
+	content: "";
+	width: 16vw;
+	height: 45vh;
+	position: absolute;
+	top: 0;
+	border-radius: 0.5vw;
+	background-color: black;
+	opacity: 0;
+	transition: opacity 0.25s, box-shadow 3s;
+}
+
+/*pulsująca obramówka + przyciemnienie*/
+.okladka:hover::before
+{
+	z-index: 2;
+	opacity: 0.9;
+	animation: glowing-border 3s infinite;
+}
+
+/*wyskakujące logo gry po najechaniu*/
+.okladka::after
+{
+	content: "";
+	position: absolute;
+	width: 16vw;
+	height: 45vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.25s;
+	border-radius: 0.5vw;
+}
+
+.okladka:hover::after
+{
+	z-index: 2;
+	opacity: 1;
+}
+
+/*opóźnienie w pojawieniu się linków*/
+#okladki a
+{
+	animation: wylacz 10s;
+	animation-fill-mode: forwards;
+}
+
+/*loga gier po najechaniu - ustawienia tła*/
+#o76::after {background-image: url("grafiki/fallout76-logo.png"); background-size: 17vw 18vh;}
+#o4::after {background-image: url("grafiki/fallout4-logo.png"); background-size: 14vw 13vh;}
+#onv::after {background-image: url("grafiki/falloutnv-logo.png"); background-size: 15vw 15vh;}
+#o3::after {background-image: url("grafiki/fallout3-logo.png"); background-size: 15vw 15vh;}
+
+/*odstęp pomiędzy sekcjami strony*/
+section
+{
+	margin-top: 10vh;
+}
+section:last-child
+{
+	margin-bottom: 20vh;
+}
+
+/*efekt ramki z pustą przestrzenią po środku pionowych ścian*/
+.polramka
+{
+	width: 75vw;
+	border: 0.5vh solid #146c11;
+	border-width: 0.5vh 0.25vw;
+	position: relative;
+	font-size: 2.25vh;
+}
+
+.polramka:first-child
+{
+	margin-top: 25vh;
+}
+
+.polramka::before, .polramka::after
+{
+	content: "";
+	background-color: #0d1b0f;
+	width: 0.3vw;
+	height: 70%;
+	position: absolute;
+	top: 15%;
+}
+
+.polramka::before {left: -0.25vw;}
+.polramka::after {right: -0.25vw;}
+
+/*stylizacja sekcji z DLC*/
+#sekcja_dlc
+{
+	position: relative;
+}
+
+/*zmiana położenia zdjęcia psa - odnośnik do innej tematyki*/
+#sekcja_dlc img
+{
+	position: absolute;
+	right: 5vw;
+	bottom: 10vh;
+	transform: rotate(5deg);
+	width: 20vw;
+	height: 30vh;
+	opacity: 0.3;
+}
+
+#sekcja_dlc img:hover
+{
+	opacity: 0.9;
+}
+
+/*stylizacja list*/
+#lista
+{
+	width: 60%;
+	padding-left: 3vw;
+	padding-top: 1vh;
+}
+
+#lista ol
+{
+	list-style-type: upper-roman;
+	padding-left: 5vw;
+	list-style-position: inside;
+}
+#lista ul
+{
+	list-style-type: "▮ ";
+	padding-left: 3vw;
+	list-style-position: inside;
+}
+
+#lista a
+{
+	background-color: #0d1b0f;	
+	color: #199515;
+	text-decoration: none;
+}
+
+#lista a:hover li
+{
+	background-color: #199515;
+	color: #0d1b0f;
+}
+
+#lista a:active li
+{
+	background-color: #146c11;
+}
+
+/*stylizacja tabeli*/
+#sekcja_spolszczenia
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#sekcja_spolszczenia h2 
+{
+	align-self: flex-start;
+}
+
+#tabelka
+{
+	width: 80%;
+	margin: 1vh 1vw 5vh 1vw;
+	font-size: 2vh;
+}
+table, th, td
+{
+	border: 0.5vh solid #146c11;
+	border-collapse: collapse;
+	text-align: center;
+	vertical-align: center;
+}
+
+/*wyróżnienie aktualnej lokalizacji w menu nawigacji gier*/
+#gry .lokalizacja
+{
+	text-shadow: 0px 0px 1vw #199515;
+	color: #3BB737;
+}
+
+/*stylizacja schematu podstrony*/
+#fabula
+{
+	display: flex;
+	align-items: center;
+}
+#cover img
+{
+	margin: 2vh 1.5vw;
+	width: 17vw;
+	height: 46vh;
+	border-radius: 0.5vw;
+}
+#tresc h2
+{
+	display: block;
+	font-size: 4vh;
+	animation-duration: 5s;
+	overflow: hidden;
+}
+#tresc
+{
+	display: block;
+	text-align: justify;
+	padding-right: 1vw;
+	padding-bottom: 2vh;
+}
+#tresc p
+{
+	opacity: 0;
+	animation: pop 1s;
+	animation-delay: 2.5s;
+	animation-fill-mode: forwards;
+}
+
+#mapa
+{
+	font-size: 2.5vh;
+	display: flex;
+	flex-direction: column;
+	padding: 2vh 2vw;
+}
+
+#map
+{
+	width: 100%;
+}
+
+/*sekcja źródeł - ukryta jako hiperłącze w stopce strony*/
+footer a, #zrodla a
+{
+	text-decoration: none;
+	color: #199515;
+}
+
+footer a:hover, #zrodla a:hover
+{
+	color: #0d1b0f;
+	background-color: #199515;
+}
+
+#zrodla, #pomysly
+{
+	padding: 2vh 2vw;
+}
+
+.zrodlo
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#pomysly ul
+{
+	padding-left: 5vw;
+	list-style-type: ">>> ";
+}
+
+/*stylizacja sekcji z formularzem i samego formularza*/
+
+#recenzja
+{
+	width: 80vw;
+}
+#recenzja legend 
+{
+	font-size: 4vh; 
+	padding-left: 1vw; 
+	padding-right: 1vw;
+}
+
+#recenzja fieldset
+{
+	border: 0.5vh solid #146c11;
+	border-width: 0.5vh 0.25vw;
+	position: relative;
+}
+
+/* ramka */
+#recenzja fieldset::before, #recenzja fieldset::after
+{
+	content:"";
+	width: 0.3vw;
+	background-color: #0d1b0f;
+	height: 70%;
+	position: absolute;
+	top: 15%;
+}
+
+#recenzja fieldset::before {left: -0.25vw;}
+#recenzja fieldset::after {right: -0.25vw;}
+
+#recenzja form
+{
+	font-size: 2.25vh;
+}
+
+/*stylizacja radio i checkbox*/
+#plusy
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+#plusy div
+{
+	width: 33%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+input[type="radio"], input[type="checkbox"]
+{
+	width: 2.25vh;
+	height: 2.25vh;
+	margin: 1vh 0.5vw 1vh 0;
+	vertical-align: middle;
+}
+
+.radioicheck
+{
+	padding-right: 0.5vw;
+}
+
+.radioicheck:hover
+{
+	background-color: #199515;
+	color: #0d1b0f;
+}
+
+.radioicheck:active
+{
+	background-color: #146c11;
+}
+
+/*inputy do wpisywania*/
+#recenzja textarea
+{
+	margin-top: 1vh;
+	width: 50vw;
+	height: 20vh;
+	resize: none;
+	font-size: inherit;
+	padding: 1vh 1vw;
+	background-color: #0d1b0f;
+	color: #199515;
+	border: 0.5vh solid #146c11;
+	border-width: 0.5vh 0.25vw;
+}
+
+#taborder
+{
+	display: inline-block;
+	position: relative;
+}
+
+#taborder::before, #taborder::after
+{
+	content: "";
+	background-color: #0d1b0f;
+	width: 46vw;
+	height: 1vh;
+	position: absolute;
+	left: 2vw;
+}
+
+#taborder::before
+{
+	top: 3.9vh;
+}
+
+#taborder::after
+{
+	top: 23.3vh;
+}
+
+#tablink
+{
+	position: relative;
+}
+
+#tablink::before
+{
+	content: "";
+	width: 0.5vw;
+	height: 2.25vh;
+	background-color: #199515;
+	position: absolute;
+	top: -16vh;
+	left: 0.5vw;
+	animation: blink 0.75s infinite;	
+}
+
+#recenzja input
+{
+	font-size: inherit;
+	padding: 0;
+	border: none;
+}
+
+#recenzja input[type="text"], #recenzja input[type="email"]
+{
+	width: 20vw;
+	min-height: 5vh;
+	padding-left: 0.5vw;
+}
+
+#recenzja input[type="number"]
+{
+	width: 8vw;
+	height: 5vh;
+	padding-left: 0.5vw;
+}
+
+#recenzja input[type="text"], #recenzja input[type="email"], #recenzja input[type="number"]
+{
+	background-color: #0d1b0f;
+	color: #199515;
+}
+
+
+/*migający wskaźnik pola do edycji*/
+label[for="username"], label[for="email"], label[for="ocena"], label[for="czasgry"]
+{
+	position: relative;
+}
+
+
+label[for="username"]::before, label[for="email"]::before, label[for="ocena"]::before, label[for="czasgry"]::before
+{
+	content: "";
+	width: 0.5vw;
+	height: 2.25vh;
+	background-color: #199515;
+	position: absolute;
+	right: 0;
+	top: 0;
+	animation: blink 0.75s infinite;
+}
+/*koniec sekcji dot. wskaźnika pola do edycji*/
+
+/*zwiększenie rozmiaru gwiazdki przy ostatecznej ocenie gry*/
+#gwiazdka {font-size: 3vh;}
+
+/* stylizacja przycisków */
+#recenzja input[type="submit"], #recenzja input[type="reset"]
+{
+	font-size: 2.5vh;
+	background-color: #0d1b0f;
+	color: #199515;
+	text-transform: uppercase;
+}
+
+#recenzja input[type="submit"]:hover, #recenzja input[type="reset"]:hover
+{
+	background-color: #199515;
+	color: #0d1b0f;
+}

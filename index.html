@@ -1,0 +1,176 @@
+<!-- Wykonał: Dariusz Kierojczyk, 3 TiD -->
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+	<meta charset="utf-8">
+	<title>Fallout - Uniwersum 3D</title>
+	<meta name="author" content="Dariusz Kierojczyk">
+	<meta name="description" content="Strona poświęcona odsłonom gier z postapokaliptycznej serii Fallout osadzonym w uniwersum 3D, wykonana na potrzeby projektu szkolnego.">
+	<meta name="keywords" content="Fallout, Fallout 4, Fallout 3, Fallout 76, Fallout New Vegas, Bethesda, Bethesda Softworks, Fallout 3D, Seria Fallout, FO, FO3D, FO3, FO4, FONV, FO76, Bethesda SW, Obsidian Entertainment, Obsidian, OE, Fallout Multiplayer, Fallout Singleplayer, Sandbox, RPG, Open World, Exploration, Postapo, Postapo, Fantastyka postapokaliptyczna, post apocalyptic, post-apocalyptic">
+	<!-- Pierwszy arkusz styli CSS - zawiera 99% ustawień wyglądu strony -->
+	<link rel="stylesheet" type="text/css" href="styl.css">
+	<!-- Drugi arkusz styli CSS - zawiera pozostały 1% - wszystkie konstrukcje zastosowanych animacji -->
+	<link rel="stylesheet" type="text/css" href="animacje.css">
+	<!-- Czcionka najbardziej zbliżona do tej z gier -->
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<!-- Małe logo przekonwertowane na ikonę strony - favicon -->
+	<link rel="shortcut icon" href="grafiki/favicon.ico">
+</head>
+
+<body>
+	<div id="container">
+		<nav id="panelboczny">
+			<a href="#container">Lista<br>gier</a>
+			<a href="#sekcja_dlc">Lista<br>DLC</a>
+			<a href="#sekcja_spolszczenia">Spolszczenia<br>gier</a>
+		</nav>	
+		<div id="sticky">
+			<header>
+				<a href="index.html">
+					<!-- Małe logo zostało wykonane od zera w Inkscape, inspiracją było logo Fallout 76 -->
+					<img src="grafiki/logo.png" alt="Małe logo Fallout">
+				</a>
+				<a href="index.html">
+					<!-- Logo zostało wycięte z tapety tematycznej dostępnej w Internecie -->
+					<img src="grafiki/logoDuze.png" alt="Logo Fallout">
+				</a>
+			</header>
+			<nav id="gry">
+				<a href="fo76.html">Fallout 76</a>
+				<a href="fo4.html">Fallout 4</a>
+				<a href="fonv.html">Fallout New Vegas</a>
+				<a href="fo3.html">Fallout 3</a>
+			</nav>
+			<nav id="tworcy">
+				<!-- Trzy polecane strony zewnętrzne -->
+				<a href="https://bethesda.net/pl/dashboard">[ Bethesda.net ]</a>
+				<a href="https://www.youtube.com/user/BethesdaSoftworks">[ YouTube ]</a>
+				<a href="https://www.facebook.com/BethesdaSoftworks/">[ Facebook ]</a>
+			</nav>
+		</div>
+		<main>
+				<section class="polramka" id="sekcja_okladki">
+					<h2 class="type">Wybierz odsłonę gry</h2>
+					<div id="okladki">
+						<!-- Każda okładka została wykadrowana w Gimpie i z każdego logo (po najechaniu) zostały pousuwane tła. -->
+						<a href="fo76.html"><div class="okladka" id="o76"><img src="grafiki/fallout76-cover.png" alt="Okładka Fallout 76"></div></a>
+						<a href="fo4.html"><div class="okladka" id="o4"><img src="grafiki/fallout4-cover.png" alt="Okładka Fallout 4"></div></a>
+						<a href="fonv.html"><div class="okladka" id="onv"><img src="grafiki/falloutnv-cover.png" alt="Okładka Fallout New Vegas"></div></a>
+						<a href="fo3.html"><div class="okladka" id="o3"><img src="grafiki/fallout3-cover.png" alt="Okładka Fallout 3"></div></a>
+					</div>
+				</section>
+				<section class="polramka" id="sekcja_dlc">
+					<h2 class="type">Lista dostępnych dodatków [DLC]</h2>
+					<div id="lista">
+						<ol>
+							<li>Fallout 76
+								<ul>
+									<a href="https://fallout.fandom.com/wiki/Wild_Appalachia"><li>Wild Appalachia [2019]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Nuclear_Winter"><li>Nuclear Winter [2019]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Wastelanders"><li>Wastelanders [2020]</li></a>
+								</ul>
+							</li>
+							<li>Fallout 4
+								<ul>
+									<a href="https://fallout.fandom.com/wiki/Automatron_(add-on)"><li>Automatron [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Wasteland_Workshop"><li>Wasteland Workshop [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Far_Harbor_(add-on)"><li>Far Harbor [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Contraptions_Workshop"><li>Contraptions Workshop [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Vault-Tec_Workshop"><li>Vault-Tec Workshop [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Nuka-World_(add-on)"><li>Nuka-World [2016]</li></a>
+									<a href="https://fallout.fandom.com/wiki/High_Resolution_Texture_Pack"><li>High Resolution Texture Pack [2017]</li></a>
+								</ul>									
+							</li>
+							<li>Fallout New Vegas
+								<ul>
+									<a href="https://fallout.fandom.com/wiki/Dead_Money"><li>Dead Money [2010/2011]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Honest_Hearts"><li>Honest Hearts [2011]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Old_World_Blues_(add-on)"><li>Old World Blues [2011]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Lonesome_Road_(add-on)"><li>Lonesome Road [2011]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Courier%27s_Stash"><li>Courier's Stash [2011]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Gun_Runners%27_Arsenal"><li>Gun Runners' Arsenal [2011]</li></a>
+								</ul>
+							</li>
+							<li>Fallout 3
+								<ul>
+									<a href="https://fallout.fandom.com/wiki/Operation:_Anchorage_(add-on)"><li>Operation: Anchorage [2009]</li></a>
+									<a href="https://fallout.fandom.com/wiki/The_Pitt_(add-on)"><li>The Pitt [2009]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Broken_Steel"><li>Broken Steel [2009]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Point_Lookout_(add-on)"><li>Point Lookout [2009]</li></a>
+									<a href="https://fallout.fandom.com/wiki/Mothership_Zeta_(add-on)"><li>Mothership Zeta [2009]</li></a>
+								</ul>
+							</li>
+						</ol>
+					</div>
+					<!-- Jako zewnętrzną tematykę umieszczam link do informacji o owczarku niemieckim, obrazek psa znaleziony w Internecie -->
+					<a href="https://pl.wikipedia.org/wiki/Owczarek_niemiecki"><img src="grafiki/dogmeat.png" alt="Zewnętrzna tematyka - owczarek niemiecki"></a>
+				</section>
+				<section class="polramka" id="sekcja_spolszczenia">
+					<h2 class="type">Lista dostępnych spolszczeń</h2>
+					<table id="tabelka">
+						<tr>
+							<th rowspan="2" colspan="2">Gra</th>
+							<th colspan="2">Wersja językowa</th>
+						</tr>
+						<tr>
+							<th>Spolszczenie pełne <br> (napisy + dubbing)</th>
+							<th>Spolszczenie kinowe <br> (napisy)</th>
+						</tr>
+						<tr>
+							<td rowspan="2">Fallout 76</td>
+							<td>Podstawa</td>
+							<td> X </td>
+							<td> ✓ </td>
+						</tr>
+						<tr>
+							<td>DLC</td>
+							<td> X </td>
+							<td> ✓ </td>								
+						</tr>
+						<tr>
+							<td rowspan="2">Fallout 4</td>
+							<td>Podstawa</td>
+							<td> X </td>
+							<td> ✓ </td>
+						</tr>
+						<tr>
+							<td>DLC</td>
+							<td> X </td>
+							<td> ✓ </td>								
+						</tr>
+						<tr>
+							<td rowspan="2">Fallout New Vegas</td>
+							<td>Podstawa</td>
+							<td> X </td>
+							<td> ✓ </td>
+						</tr>
+						<tr>
+							<td>DLC</td>
+							<td> X </td>
+							<td> ✓ </td>								
+						</tr>
+						<tr>
+							<td rowspan="2">Fallout 3</td>
+							<td>Podstawa</td>
+							<td> ✓ </td>
+							<td> ✓ </td>
+						</tr>
+						<tr>
+							<td>DLC</td>
+							<td> ✓ </td>
+							<td> ✓ </td>								
+						</tr>
+					</table>
+				</section>
+		</main>
+		<footer>
+			<!-- Ukryta podstrona ze źródłami - znajdują się tam wszystkie wykorzystane przeze mnie linki oraz notatki, które sporządzałem sobie podczas pracy -->
+			<h2><a href="zrodla.html">>>> Dariusz Kierojczyk, 3 TiD</a></h2>
+		</footer>
+		<!-- Obrazek znaleziony w Internecie - usunąłem tło oraz przekształciłem go na "konturową" wersję >>> Przekierowanie do góry w postaci graficznej-->
+		<a href="#container"><img id="up" src="grafiki/Vault-boy.png" alt="Vault Boy - powrót na górę strony"></a>
+	</div>
+</body>
+
+</html>
